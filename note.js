@@ -1,4 +1,6 @@
-const baseURL = "http://52.79.195.195:8000/post/";
+const baseURL = import.meta.env.PROD
+  ? "/api" // 프로덕션 환경
+  : "http://52.79.195.195:8000/post"; // 개발 환경
 
 
 class Note {
@@ -38,9 +40,9 @@ document.getElementById('note-form').addEventListener('submit', async (e) => {
         }).then(response => response.json())
         .then(data => console.log('User created:', data));
 
-        const data = await response.json();
-        console.log('게시글 생성 결과: ', data);
-        alert(data.message || '등록 성공!');
+        //const data = await response.json();
+        //console.log('게시글 생성 결과: ', data);
+        alert('등록 성공!');
         window.close();
 
     } catch (error) {
@@ -49,8 +51,3 @@ document.getElementById('note-form').addEventListener('submit', async (e) => {
     }
 });
 
-
-// problem
-// 1. 등록하기 눌러도 안 닫힘
-// 2. alert 아무 것도 안 뜸
-// 3. console.log에 아무것도 안 찍힘
