@@ -1,6 +1,4 @@
-const baseURL = import.meta.env.PROD
-  ? "/api" // 프로덕션 환경
-  : "http://52.79.195.195:8000/post"; // 개발 환경
+const baseURL = '/api/post/';
 
 function openWindow() {
     const options = 'width=700, height=600, top=50, left=50, scrollbars=yes'
