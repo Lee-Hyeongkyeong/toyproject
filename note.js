@@ -1,7 +1,4 @@
-const baseURL = '/api/post/'
-import.meta.env.PROD
-  ? "/api" // 프로덕션 환경
-  : "http://52.79.195.195:8000/post"; // 개발 환경
+const baseURL = '/api/post/';
 
 
 class Note {
