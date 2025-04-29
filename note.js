@@ -41,6 +41,7 @@ document.getElementById('note-form').addEventListener('submit', async (e) => {
         //const data = await response.json();
         //console.log('게시글 생성 결과: ', data);
         alert('등록 성공!');
+        window.opener.postMessage('refreshNotes', '*');
         window.close();
 
     } catch (error) {

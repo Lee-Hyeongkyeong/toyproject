@@ -18,6 +18,7 @@ const closeBtn = modal.querySelector('.close-btn');
 
 async function loadNote() {
     try {
+        container.innerHTML = '';
         const response = await fetch(baseURL);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
