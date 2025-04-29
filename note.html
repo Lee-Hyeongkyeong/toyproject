@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록 남기기</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="note.css">
+</head>
+<body>
+    <div class="note-section">
+        <h2>방명록 남기기</h2>
+        <form id="note-form">
+            <div id="info">
+                <input type="text" id="title" placeholder="제목이다" required>
+                <input type="password" id="password" placeholder="비밀번호다" required>
+            </div>
+            <input type="text" id="content" placeholder="내가 너를 찾아왔단다 꺄르르 깔깔깔깔" required>
+            <div id="button-section">
+                <input type="submit" value="등록하기">
+                <input type="button" value="취소하기" onclick="window.close()">
+            </div>
+        </form>
+        <script src="note.js"></script>
+    </div>
+</body>
+</html>

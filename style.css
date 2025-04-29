@@ -1,0 +1,48 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pretendard ExtraBold';
+}
+
+.main-logo {
+    margin-top: 100px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#new {
+    border-radius: 25px;
+    padding: 15px;
+    margin: 25px;
+    color: white;
+    background-color: #E49723;
+    border: none;
+    font-family: 'Pretendard ExtraBold';
+}
+
+a {
+    font-family: 'Pretendard ExtraBold';
+}
+
+img {
+    width: 100px;
+    height: 85px;
+}

@@ -1,0 +1,54 @@
+.delete-container {
+    border: 2px solid #ededed;
+    border-radius: 8px;
+    background: #fff;
+    width: 350px;
+    margin: 32px auto;
+    padding: 32px 24px 24px 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-container h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+#delete-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
+}
+
+#password-input {
+    border: 2px solid #ededed;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.15s;
+    width: 140px;
+}
+#password-input:focus {
+    border: 2px solid #FEBD57;
+}
+
+#delete-btn {
+    background: #888;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+#delete-btn:hover {
+    opacity: 70%;
+}
