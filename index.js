@@ -11,6 +11,10 @@ function openDelete(id) {
 }
 
 const container = document.getElementById("card_section");
+const modal = document.getElementById('card-modal');
+const modalTitle = modal.querySelector('.modal-title');
+const modalBody = modal.querySelector('.modal-body');
+const closeBtn = modal.querySelector('.close-btn');
 
 async function loadNote() {
     try {
@@ -37,46 +41,75 @@ async function loadNote() {
 }
 
 
+// 카드 생성 함수
 function createCard(post) {
-
-    // 전체 카드 구조
     const card = document.createElement('div');
     card.className = 'card';
     card.dataset.id = post.id;
-    
+
     // 제목
     const cardTitle = document.createElement('div');
     cardTitle.className = 'card-title';
-    cardTitle.textContent = post.title;
-    
+    cardTitle.textContent = post.title || '제목없음';
+
     // 구분선
     const cardDivider = document.createElement('hr');
     cardDivider.className = 'card-divider';
-    
+
     // 내용
     const cardContent = document.createElement('div');
     cardContent.className = 'card-content';
-    cardContent.textContent = post.content;
-    
+    cardContent.textContent = post.content || '';
+
     // 삭제 버튼
     const cardFooter = document.createElement('div');
     cardFooter.className = 'card-footer';
-    
+
     const deleteButton = document.createElement('button');
     deleteButton.className = 'card-delete-button';
     deleteButton.textContent = '삭제하기';
-    deleteButton.onclick = () => {
-        openDelete(post.id, post.password);
+    deleteButton.onclick = (e) => {
+        e.stopPropagation(); // 카드 클릭 이벤트와 분리
+        openDelete(post.id);
     };
-    
+
     cardFooter.appendChild(deleteButton);
+
+    // 카드 조립
     card.appendChild(cardTitle);
     card.appendChild(cardDivider);
     card.appendChild(cardContent);
     card.appendChild(cardFooter);
 
+    // 카드 클릭 시 모달 오픈
+    card.addEventListener('click', () => {
+        showModal(post);
+    });
+
     container.appendChild(card);
 }
+
+// 모달 열기
+function showModal(post) {
+    modalTitle.textContent = post.title || '제목없음';
+    modalBody.textContent = post.content || '';
+    modal.style.display = 'flex';
+}
+
+// 모달 닫기
+closeBtn.onclick = function() {
+    modal.style.display = 'none';
+};
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+};
+window.addEventListener('keydown', function(e) {
+    if (modal.style.display === 'flex' && e.key === 'Escape') {
+        modal.style.display = 'none';
+    }
+});
 
 window.addEventListener('load', loadNote);
 

@@ -69,3 +69,74 @@
     width: 100%;
     padding: 20px 0 0 0;
 }
+
+/* 모달 배경 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.25);
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달 내용 */
+.modal-content {
+    background: #fff;
+    border: 2px solid #ededed;
+    border-radius: 8px;
+    width: 350px;
+    min-height: 220px;
+    padding: 32px 24px 24px 24px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: popup 0.22s cubic-bezier(.4,2,.6,1);
+}
+@keyframes popup {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 모달 제목 */
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* 모달 구분선 */
+.modal-divider {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ededed;
+    margin: 0 0 24px 0;
+}
+
+/* 모달 본문 */
+.modal-body {
+    font-size: 1.08rem;
+    color: #222;
+    text-align: center;
+    margin-bottom: 12px;
+    word-break: keep-all;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+    position: absolute;
+    top: 12px; right: 16px;
+    font-size: 1.7rem;
+    color: #bbb;
+    cursor: pointer;
+    transition: color 0.18s;
+}
+.close-btn:hover {
+    opacity: 70%;
+}

@@ -1,4 +1,5 @@
-const baseURL = "http://52.79.195.195:8000/post/"
+const baseURL = "https://52.79.195.195:8000/post/";
+
 
 class Note {
     constructor(title, content, password) {
