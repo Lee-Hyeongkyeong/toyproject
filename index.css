@@ -10,6 +10,7 @@
     min-height: 250px;
     width: 250px;
     transition: box-shadow 0.2s;
+    cursor: pointer;
 }
 
 .card-title {
@@ -34,6 +35,13 @@
     text-align: center;
     margin-bottom: 32px;
     word-break: keep-all;
+    
+    max-height: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
 }
 
 .card-footer {
